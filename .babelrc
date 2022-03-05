@@ -1,0 +1,16 @@
+{
+	presets: [
+		[
+			"@babel/preset-env", {
+				targets: {
+					esmodules: false, /**不需要转成其他模块语法，tree-shaking才有效果**/
+					chrome: "67",
+				},
+				"corejs": "3",
+				useBuiltIns: 'usage' /**引入用到pollyfill**/
+			}
+		],
+		"@babel/preset-react"
+	],
+	plugins:["@babel/plugin-syntax-dynamic-import"]
+}
