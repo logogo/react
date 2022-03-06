@@ -11,7 +11,7 @@
     "prepare": "set-script prepare"
   },
   "pre-commit": [
-    "dev"
+    "make"
   ],
   "sideEffects": [
     "*.css"

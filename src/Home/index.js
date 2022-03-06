@@ -14,7 +14,7 @@ class Home extends Component {
        return  (<Container {...{width:100,height:100}}>
                 <div onClick={()=>{
                     tiao()
-                }}>1111</div>
+                }}>11113333366666</div>
                 <div>1111</div>
                 <div>1111</div>
                 <div>1111</div>
