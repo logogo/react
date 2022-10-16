@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const exec = require("child_process").exec;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 exec('node server.js',function (error, stdout, stderr) {
     if(error){
         console.log(error)
@@ -37,7 +38,8 @@ const devConfig = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin() 
     ],
     output: {
         filename: '[name].js',

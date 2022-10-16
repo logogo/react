@@ -8,7 +8,8 @@ const devConfig = require('./webpack.dev.js')
 const prodConfig = require('./webpack.prod.js')
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
 let json = { // 配置不同的环境变量.env
   path: ''
 }
@@ -92,5 +93,7 @@ module.exports = (env)=>{
     if(env && env.production){
         return merge(commConfig, prodConfig)
     }
-    return merge(commConfig, devConfig)
+    return smp.wrap(
+        merge(commConfig, devConfig)
+    )
 }
