@@ -11,7 +11,7 @@ function getDiffFiles(type){
   let types = type.split("").map(t => {
     return t.toLowerCase()
   })
-  console.log(files)
+  console.log(typeof(files))
   return 1111111
 }
 
