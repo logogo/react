@@ -15,7 +15,6 @@ function getDiffFiles(type){
     return t.toLowerCase()
   })
   files.forEach(file => {
-    console.log(file)
     if (!file) {
       return
     }
