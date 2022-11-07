@@ -1,11 +1,15 @@
 const execSync = require("child_process").execSync;
 const path = require("path")
-let files = execSync("git diff --cached --name-status HEAD")
-.toString()
-.split("\n")
-console.log(execSync)
-console.log(11111111)
-console.log(path)
-console.log(2222222)
-console.log(files)
-console.log(333333)
+let diff = getDiffFiles()
+
+function getDiffFiles(type){
+  let root = process.cwd()
+  let files = execSync("git diff --cached --name-status HEAD")
+  .toString()
+  .split("\n")
+console.log('git diff files:', files)
+console.log(root)
+  return 1111111
+}
+
+console.log(diff)
