@@ -1,1 +1,11 @@
-console.log(1111111111111111)
+const execSync = require("child_process").execSync;
+const path = require("path")
+let files = execSync("git diff --cached --name-status HEAD")
+.toString()
+.split("\n")
+console.log(execSync)
+console.log(11111111)
+console.log(path)
+console.log(2222222)
+console.log(files)
+console.log(333333)
