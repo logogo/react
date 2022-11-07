@@ -12,13 +12,11 @@ function getDiffFiles(type){
   let types = type.split("").map(t => {
     return t.toLowerCase()
   })
-  console.log(files)
   files.forEach(file => {
     if (!file) {
       return
     }
     let temp = file.split(/[\n\t]/)
-    console.log(temp)
     let status = temp[0].toLowerCase()
     let filePath = root + "/" + temp[1]
     let extName = path.extname(filePath).slice(1)
@@ -36,5 +34,11 @@ function getDiffFiles(type){
 }
 
 async function compressPics(files) {
-  console.log(files)
+   // 过滤出add modified, .png、.jpg、.jpeg图片
+   const filterExtNames = ["png", "jpg"]
+   const filterTypes = ["a", "m"]
+   const imagemin = (await import('imagemin')).default
+   let images = files.filter(file => filterExtNames.includes(file.extName) && filterTypes.includes(file.status))
+   console.log(imagemin)
+   console.log('待压缩的图片序列: ' ,images)
 }
