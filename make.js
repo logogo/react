@@ -16,6 +16,7 @@ function getDiffFiles(type){
       return
     }
     let temp = file.split(/[\n\t]/)
+    console.log(temp)
     let status = temp[0].toLowerCase()
     let filePath = root + "/" + temp[1]
     let extName = path.extname(filePath).slice(1)
