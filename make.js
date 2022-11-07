@@ -35,7 +35,7 @@ function getDiffFiles(type){
 
 async function compressPics(files) {
    // 过滤出add modified, .png、.jpg、.jpeg图片
-   const filterExtNames = ["png", "jpg"]
+   const filterExtNames = ["png", "jpg","jpeg"]
    const filterTypes = ["a", "m"]
    const imagemin = (await import('imagemin')).default
    let images = files.filter(file => filterExtNames.includes(file.extName) && filterTypes.includes(file.status))
