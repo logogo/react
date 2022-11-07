@@ -1,6 +1,7 @@
 const execSync = require("child_process").execSync;
 const path = require("path")
 let diff = getDiffFiles()
+compressPics(diff)
 
 function getDiffFiles(type){
   let root = process.cwd()
@@ -34,4 +35,6 @@ function getDiffFiles(type){
   return result
 }
 
-console.log(diff)
+async function compressPics(files) {
+  console.log(files)
+}
