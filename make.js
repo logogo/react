@@ -11,6 +11,7 @@ function getDiffFiles(type){
   let types = type.split("").map(t => {
     return t.toLowerCase()
   })
+  console.log(files)
   files.forEach(file => {
     if (!file) {
       return
