@@ -5,8 +5,13 @@ let diff = getDiffFiles()
 function getDiffFiles(type){
   let root = process.cwd()
   let files = execSync("git diff --cached --name-status HEAD").toString().split("\n")
-console.log('git diff files:', execSync("git diff --cached --name-status HEAD").toString())
-console.log(root)
+  let result = []
+  // add, delete, modified, renamed, copied
+  type = type || "admrc"
+  let types = type.split("").map(t => {
+    return t.toLowerCase()
+  })
+  console.log(types)
   return 1111111
 }
 
