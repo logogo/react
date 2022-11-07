@@ -1,5 +1,7 @@
 const execSync = require("child_process").execSync;
 const path = require("path")
+const imageminPngquant = require("imagemin-pngquant")
+const imageminJpegtran = require("imagemin-jpegtran")
 let diff = getDiffFiles()
 compressPics(diff)
 
@@ -13,6 +15,7 @@ function getDiffFiles(type){
     return t.toLowerCase()
   })
   files.forEach(file => {
+    console.log(file)
     if (!file) {
       return
     }
@@ -39,6 +42,34 @@ async function compressPics(files) {
    const filterTypes = ["a", "m"]
    const imagemin = (await import('imagemin')).default
    let images = files.filter(file => filterExtNames.includes(file.extName) && filterTypes.includes(file.status))
-   console.log(imagemin)
    console.log('待压缩的图片序列: ' ,images)
+   let parentFolder = {}
+   images.forEach(x => {
+     // 根据不同父级目录分类
+     let pf = x.subpath.slice(0, x.subpath.lastIndexOf("/"))
+     parentFolder[pf] ?
+       parentFolder[pf].push(x.subpath) :
+       (parentFolder[pf] = [x.subpath])
+   }) 
+   for (let pf in parentFolder) {
+    try {
+      imagemin(parentFolder[pf], {
+        // 原图片目录
+        destination: pf, // 生成图片的目录
+        plugins: [
+          imageminJpegtran(),
+          imageminPngquant({
+            speed: 1,
+            quality: [0.6, 0.8]
+          })
+        ]
+      })
+      .then(() => {
+        execSync('git add .')
+      })
+    } catch (error) {
+      console.log(error)
+      process.exit(1)
+    }
+  }
 }
