@@ -11,8 +11,25 @@ function getDiffFiles(type){
   let types = type.split("").map(t => {
     return t.toLowerCase()
   })
-  console.log(files.length)
-  return 1111111
+  files.forEach(file => {
+    if (!file) {
+      return
+    }
+    let temp = file.split(/[\n\t]/)
+    let status = temp[0].toLowerCase()
+    let filePath = root + "/" + temp[1]
+    let extName = path.extname(filePath).slice(1)
+
+    if (types.length && ~types.indexOf(status)) {
+      result.push({
+        status, // admrc中的一个
+        path: filePath, // 绝对路径
+        subpath: temp[1], // 相对路径
+        extName // 扩展名
+      })
+    }
+  })
+  return result
 }
 
 console.log(diff)
