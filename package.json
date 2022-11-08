@@ -8,7 +8,7 @@
     "dev": "set NODE_ENV=dev&&webpack-dev-server --config ./build/webpack.common.js",
     "build:dll": "webpack --config ./build/webpack.dll.js",
     "make": "node ./make.js",
-    "prepare": "set-script prepare"
+    "prepare": "set-script prepare && husky install"
   },
   "pre-commit": [
     "make"
@@ -36,7 +36,7 @@
     "express": "^4.17.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "imagemin": "^8.0.1",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
