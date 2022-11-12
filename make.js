@@ -2,6 +2,7 @@ const execSync = require("child_process").execSync;
 const path = require("path")
 const imageminPngquant = require("imagemin-pngquant")
 const imageminJpegtran = require("imagemin-jpegtran")
+console.log(111111111111)
 let diff = getDiffFiles()
 compressPics(diff)
 

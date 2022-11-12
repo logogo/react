@@ -7,8 +7,7 @@
     "build": "webpack --env.pro --config ./build/webpack.common.js",
     "dev": "set NODE_ENV=dev&&webpack-dev-server --config ./build/webpack.common.js",
     "build:dll": "webpack --config ./build/webpack.dll.js",
-    "make": "node ./make.js",
-    "prepare": "set-script prepare && husky install"
+    "make": "node ./make.js"
   },
   "pre-commit": [
     "make"
