@@ -22,6 +22,7 @@ class App extends Component {
         })
     }
     componentDidMount(){
+        console.log(this.props)
         alert(process.env.DB_HOST)
         $.get('/src/data.json',function(res){
            

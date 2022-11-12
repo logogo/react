@@ -1,15 +1,13 @@
 
 const acts = () =>{
     return {
-        type: 'acts',
-        data: 1111
+        type: 'acts'
     }
 }
 
 const acts1 = () =>{
     return {
-        type: 'ation',
-        data: 2222
+        type: 'action'
     }
 }
 

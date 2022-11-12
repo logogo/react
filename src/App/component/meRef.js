@@ -15,6 +15,10 @@ export default function(){
         },1000)
         dispatch({
             type: 'acts',
+            data: 13331
+        })
+        dispatch({
+            type: 'acts1',
             data: 1111
         })
     }, []);

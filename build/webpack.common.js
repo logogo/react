@@ -93,7 +93,5 @@ module.exports = (env)=>{
     if(env && env.production){
         return merge(commConfig, prodConfig)
     }
-    return smp.wrap(
-        merge(commConfig, devConfig)
-    )
+    return merge(commConfig, devConfig)
 }
