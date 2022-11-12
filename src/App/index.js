@@ -31,6 +31,9 @@ class App extends Component {
            
         })
     }
+    add(){
+        alert('aaaa')
+    }
     render(){
         let { changeName } = this;
         let { name } = this.state;
@@ -43,7 +46,7 @@ class App extends Component {
                 <button onClick={()=>{
                     changeName(this)
                 }}>按钮</button>
-                <Exam/>
+                <Exam {...{name: 444444}}/>
                 <MeRef/>
                 <Bi/>
             </div>

@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect ,useRef} from 'react';
 import { useSelector,useDispatch } from 'react-redux'
 
-export default function(){
+export default function(props){
     const [ count, setCount ] = useState(0);
     const dispatch = useDispatch()
     const counter = useSelector(state => state.appData)
@@ -26,6 +26,7 @@ export default function(){
         if(count>10){
             clearInterval(timerId.current)
         }
+        console.log(counter)
     })
     return (
         <>

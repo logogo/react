@@ -1,6 +1,6 @@
 import React, { useState, useRef,useEffect } from "react";
 
-const Exam = () => {
+const Exam = (props) => {
     const [counter, setCounter] = useState({name:'gao',age:11});
     const counterRef = useRef(counter);
     const onAlertButtonClick = () => {
@@ -10,7 +10,8 @@ const Exam = () => {
       };
     useEffect(() => {
       counterRef.current = counter;
-      console.log(444)
+      console.log(props)
+      console.log(111111111111111)
     });
     return (
       <div>
