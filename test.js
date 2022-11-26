@@ -17,6 +17,6 @@ if (
      process.exit(1)
   }
 
-  execSync("git rev-parse --short HEAD")
+  console.log(execSync("git rev-parse --short HEAD")
   .toString()
-  .trim();
+  .trim())
