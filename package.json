@@ -7,7 +7,8 @@
     "build": "webpack --env.pro --config ./build/webpack.common.js",
     "dev": "set NODE_ENV=dev&&webpack-dev-server --config ./build/webpack.common.js",
     "build:dll": "webpack --config ./build/webpack.dll.js",
-    "make": "node ./make.js"
+    "make": "node ./make.js",
+    "test": "cross-env UPLOADED_FOLDER=dist node ./test.js gwork/jczl/g-admin/prd focus-desktop h5:jzb:prd"
   },
   "pre-commit": [
     "make"
