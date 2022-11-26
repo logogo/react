@@ -23,6 +23,7 @@ ReactDOM.render(
          <Route path='/' exact={true} component = {App}/>
          <Route path='/home'  component = {Home}/>
          <Route path='/antdLi'  component = {AntdLi}/>
+
       </BrowserRouter>
    </Provider>,
     document.getElementById('root')

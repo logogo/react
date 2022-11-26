@@ -23,7 +23,7 @@ const AntdLi = () => {
     console.log(num)
   },[num])
   const showNum = useMemo(()=>{
-    return <ShowNum {...{num:num,stop:stop}}/>
+    return <ShowNum num={num} stop={stop}/>
   },[num])
   return (
     <>

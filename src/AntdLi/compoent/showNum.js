@@ -1,8 +1,11 @@
-import React  from 'react';
+import React,{useEffect}  from 'react';
 
-const ShowNum = function(props){
+const ShowNum = function({num,stop}){
+    useEffect(()=>{
+        alert('aaa')
+    },[num])
     return (
-        <div onClick={()=>props.stop(2)}>{props.num}</div>
+        <div onClick={()=>stop(2)}>{num}</div>
     )
 }
 
