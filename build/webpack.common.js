@@ -14,7 +14,7 @@ let json = { // 配置不同的环境变量.env
   path: ''
 }
 if(process.env.NODE_ENV){
-  json.path= path.resolve(process.cwd(),'./.env.'+process.env.NODE_ENV)
+  json.path= path.resolve(process.cwd(),'./.env.'+ process.env.NODE_ENV);
 }else{
   json.path= path.resolve(process.cwd(),'./.env')
 }
@@ -89,8 +89,8 @@ const commConfig = {
     }
 }
 
-module.exports = (env)=>{
-    if(env && env.production){
+module.exports = ()=>{
+    if(process.env.NODE_ENV && process.env.NODE_ENV === 'pro'){
         return merge(commConfig, prodConfig)
     }
     return merge(commConfig, devConfig)
