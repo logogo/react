@@ -1,12 +1,6 @@
 const webpack = require('webpack');
-const path = require('path');
-const exec = require("child_process").exec;
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-exec('node server.js',function (error, stdout, stderr) {
-    if(error){
-        console.log(error)
-    }
-})
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin  // 本地打包上线时候，不要用这个包
+
 const devConfig = {
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
@@ -39,7 +33,7 @@ const devConfig = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin() 
+        // new BundleAnalyzerPlugin() 
     ],
     output: {
         filename: '[name].js',
