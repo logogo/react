@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin  // 本地打包上线时候，不要用这个包
 
 const devConfig = {
     mode: 'development',
@@ -32,8 +31,7 @@ const devConfig = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        // new BundleAnalyzerPlugin() 
+        new webpack.HotModuleReplacementPlugin()
     ],
     output: {
         filename: '[name].js',
