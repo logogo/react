@@ -9,11 +9,8 @@
     "dev": "set NODE_ENV=dev&&webpack-dev-server --config ./build/webpack.common.js",
     "build:dll": "webpack --config ./build/webpack.dll.js",
     "make": "node ./make.js",
-    "test": "cross-env UPLOADED_FOLDER=dist node ./test.js gwork/jczl/g-admin/prd focus-desktop h5:jzb:prd"
+    "prepare": "husky install"
   },
-  "pre-commit": [
-    "make"
-  ],
   "sideEffects": [
     "*.css"
   ],
@@ -37,14 +34,13 @@
     "express": "^4.17.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.2",
     "imagemin": "^8.0.1",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
     "jquery": "^3.5.1",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "pre-commit": "^1.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
