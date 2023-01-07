@@ -7,7 +7,6 @@ module.exports = {
         "es6": true
     },
     "extends": [
-        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
