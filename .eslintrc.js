@@ -7,7 +7,6 @@ module.exports = {
         "es6": true
     },
     "extends": [
-        "react-app",
         "eslint:recommended",
         "plugin:react/recommended"
     ],
