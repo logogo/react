@@ -11,9 +11,9 @@
     "make": "node ./make.js",
     "eslint": "node ci.script.js",
     "eslint-fix": "yarn run lint && yarn run lint-style",
-    "prepare": "husky install && husky add .husky/pre-commit \"yarn run eslint\"",
     "lint": "eslint --fix --ext .js,.jsx src",
-    "lint-style": "stylelint --fix src/**/*.{css,less}"
+    "lint-style": "stylelint --fix src/**/*.{css,less}",
+    "prepare": "husky install && husky add .husky/pre-commit \"yarn run eslint\""
   },
   "sideEffects": [
     "*.css"
@@ -39,9 +39,6 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^7.0.4",
-    "imagemin": "^8.0.1",
-    "imagemin-jpegtran": "^7.0.0",
-    "imagemin-pngquant": "^9.0.2",
     "jquery": "^3.5.1",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
