@@ -25,5 +25,5 @@ ReactDOM.render(
             <Route path='/antdLi' component = {AntdLi}/>\
 	    </BrowserRouter>
     </Provider>,
-document.getElementById('root')
-)
+    document.getElementById('root')
+);
