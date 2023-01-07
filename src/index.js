@@ -15,15 +15,14 @@ const AntdLi = AsyncComponent(() => import(/* webpackChunkName: "Home",webpackPr
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(finalReducer, composeEnhancers(
     applyMiddleware(thunk)
-))
+));
 
 ReactDOM.render(
    <Provider store = {store}>
       <BrowserRouter>
          <Route path='/' exact={true} component = {App}/>
          <Route path='/home'  component = {Home}/>
-         <Route path='/antdLi'  component = {AntdLi}/>
-
+         <Route path='/antdLi'  component = {AntdLi}/>\
       </BrowserRouter>
    </Provider>,
     document.getElementById('root')
