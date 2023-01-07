@@ -14,7 +14,7 @@ const Home = AsyncComponent(() => import(/* webpackChunkName: "Home",webpackPref
 const AntdLi = AsyncComponent(() => import(/* webpackChunkName: "Home",webpackPrefetch: true */ './AntdLi/index.js'));
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(finalReducer, composeEnhancers(
-	applyMiddleware(thunk)
+    applyMiddleware(thunk)
 ))
 
 ReactDOM.render(
