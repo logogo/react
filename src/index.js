@@ -1,11 +1,11 @@
-import React  from 'react';
+import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import finalReducer from './reducer'
-import AsyncComponent from './component/index.js'
+import finalReducer from './reducer';
+import AsyncComponent from './component/index.js';
 /**
  *异步闲暇时加载
  * **/
