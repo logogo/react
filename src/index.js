@@ -18,12 +18,12 @@ const store = createStore(finalReducer, composeEnhancers(
 ));
 
 ReactDOM.render(
-   <Provider store = {store}>
-      <BrowserRouter>
-         <Route path='/' exact={true} component = {App}/>
-         <Route path='/home'  component = {Home}/>
-         <Route path='/antdLi'  component = {AntdLi}/>\
-      </BrowserRouter>
-   </Provider>,
+	<Provider store = {store}>
+		<BrowserRouter>
+			<Route path='/' exact={true} component = {App}/>
+			<Route path='/home'  component = {Home}/>
+			<Route path='/antdLi'  component = {AntdLi}/>\
+		</BrowserRouter>
+   	</Provider>,
     document.getElementById('root')
  )
