@@ -54,12 +54,12 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = ()=> {
+const mapDispatchToProps = () => {
     return dispatch => {
         return {
-            actions: bindActionCreators(acts,dispatch),
-            actions1: bindActionCreators(acts1,dispatch)
+            actions: bindActionCreators(acts, dispatch),
+            actions1: bindActionCreators(acts1, dispatch)
         };
     };
 };
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
