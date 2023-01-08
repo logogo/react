@@ -8,6 +8,11 @@ const Exam = (props) => {
             alert('Value: ' + counterRef.current.name);
         }, 3000);
     };
+    const addCount = () => {
+        setCounter(counter => {
+            return { ...counter, name: 'li' };
+        });
+    };
     useEffect(() => {
         counterRef.current = counter;
         console.log(props);
@@ -16,9 +21,7 @@ const Exam = (props) => {
     return (
         <div>
             <p>You clicked {counter.name} times.</p>
-            <button onClick={() => setCounter((counter => {
-                return { ...counter, name: 'li'};
-            }))}>Click me</button>
+            <button onClick={addCount}>Click me</button>
             <button onClick={onAlertButtonClick}>
               Show me the value in 3 seconds
             </button>
