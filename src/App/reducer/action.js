@@ -1,14 +1,14 @@
 
-const acts = () =>{
+const acts = () => {
     return {
         type: 'acts'
-    }
-}
+    };
+};
 
-const acts1 = () =>{
+const acts1 = () => {
     return {
         type: 'action'
-    }
-}
+    };
+};
 
-export {acts, acts1}
+export { acts, acts1 };
