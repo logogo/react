@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 class Other extends Component {
-    static open(){
-        alert('a')
+    static open() {
+        alert('a');
     }
-    render(){
-        return null
+    render() {
+        return null;
     }
 }
 
