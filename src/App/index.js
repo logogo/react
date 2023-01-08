@@ -1,56 +1,50 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {acts, acts1} from './reducer/action'
-import Exam from './component/exam.js'
-import MeRef from './component/meRef.js'
-import Bi from './component/bi.js'
+import { acts, acts1 } from './reducer/action';
+import Exam from './component/exam.js';
+import MeRef from './component/meRef.js';
+import Bi from './component/bi.js';
 import $ from 'jquery';
 
 class App extends Component {
-    constructor(props){
-        super(props)
-        this.state={
-            name:'asdasd'
-        }
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: 'asdasd'
+        };
     }
-    changeName(me){
-        me.setState((preState)=>{
+    changeName(me) {
+        me.setState((preState) => {
             return {
-                name:preState.name+'1111'
-            }
-        })
+                name: preState.name + '1111'
+            };
+        });
     }
-    componentDidMount(){
-        console.log(this.props)
-        alert(process.env.DB_HOST)
-        $.get('/src/data.json',function(res){
-           
-        })
-        $.get('http://localhost:8090/aaa',function(res){
-           
-        })
+    componentDidMount() {
+        console.log(this.props);
+        alert(process.env.DB_HOST);
+        $.get('/src/data.json', function(res) {});
+        $.get('http://localhost:8090/aaa', function(res) {});
     }
-    add(){
-        alert('aaaa')
+    add() {
+        alert('aaaa');
     }
-    render(){
-        let { changeName } = this;
-        let { name } = this.state;
+    render() {
         return (
             <div>
                 <div>默认数据</div>
                 <div>远程数据</div>
                 <div>{this.props.appData.newsList}</div>
-                {name}
-                <button onClick={()=>{
-                    changeName(this)
+                {this.state.name}
+                <button onClick={() => {
+                    this.changeName(this);
                 }}>按钮</button>
-                <Exam {...{name: 444444}}/>
+                <Exam {...{ name: 444444 }}/>
                 <MeRef/>
                 <Bi/>
             </div>
-        )
+        );
     }
 }
 
