@@ -5,7 +5,7 @@ import { acts, acts1 } from './reducer/action';
 import Exam from './component/exam.js';
 import MeRef from './component/meRef.js';
 import Bi from './component/bi.js';
-import $ from 'jquery';
+import couresDetails from '../api/index';
 
 class App extends Component {
     constructor(props) {
@@ -23,9 +23,10 @@ class App extends Component {
     }
     componentDidMount() {
         console.log(this.props);
-        alert(process.env.DB_HOST);
-        $.get('/src/data.json', function(res) {});
-        $.get('http://localhost:8090/aaa', function(res) {});
+        couresDetails.queryTrainProjectDetail().then(res => {
+            console.log(res);
+            console.log(111116666);
+        });
     }
     add() {
         alert('aaaa');
