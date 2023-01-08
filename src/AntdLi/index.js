@@ -1,7 +1,7 @@
 import React, { useEffect,useState,useMemo }  from 'react';
 import { useSelector,useDispatch } from 'react-redux'
 import { Row, Col } from 'antd';
-import ShowNum from './compoent/showNum'
+import ShowNum from './compoent/showNum';
 
 const AntdLi = () => {
   const [num, setNum] = useState(0)
