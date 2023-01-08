@@ -7,24 +7,24 @@ const AntdLi = () => {
     const [num, setNum] = useState(0);
     const dispatch = useDispatch();
     const counter = useSelector(state => state.AntdLiData);
-    useEffect(()=>{
-      dispatch({
-        type: "acts",
-        num: 222
-      })
-    },[]);
-  const add = ()=>{
-    setNum(num+1)
-  }
-  const stop = (num)=>{
-    setNum(num)
-  }
-  useEffect(()=>{
-    console.log(num)
-  },[num])
-  const showNum = useMemo(()=>{
-    return <ShowNum num={num} stop={stop}/>
-  },[num])
+    useEffect(() => {
+        dispatch({
+            type: 'acts',
+            num: 222
+        })
+    }, []);
+    const add = () => {
+        setNum(num + 1);
+    };
+    const stop = (num) => {
+        setNum(num);
+    };
+    useEffect(() => {
+        console.log(num);
+    }, [num]);
+    const showNum = useMemo(() => {
+        return <ShowNum num={num} stop={stop}/>;
+    }, [num]);
   return (
     <>
       <div>
