@@ -7,6 +7,7 @@
     "build": "set NODE_ENV=pro&&webpack --config ./build/webpack.common.js",
     "build:analyze": "set NODE_ENV=pro&&webpack --config ./build/webpack.common.js",
     "dev": "set NODE_ENV=dev&&webpack-dev-server --config ./build/webpack.common.js",
+    "serve": "serve ./dist/",
     "build:dll": "webpack --config ./build/webpack.dll.js",
     "make": "node ./make.js",
     "eslint": "node ci.script.js",
