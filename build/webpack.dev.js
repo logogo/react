@@ -5,15 +5,10 @@ const devConfig = {
     devtool: 'cheap-module-eval-source-map',
 	devServer: {
         contentBase: './',
-        //contentBase: './dist',
 		open: true,
 		port: 8080,
         hot: true,
         historyApiFallback: true,
-        /*proxy:{
-            '/react': 'http://www.dell-lee.com',
-            changeOrigin: true
-        }*/
     },
     module:{
         rules:[
@@ -22,9 +17,9 @@ const devConfig = {
                 use: [ 'style-loader', 
                     {
                         loader: 'css-loader',
-                        /*options: {
-                            modules: true
-                        }*/
+                        // options: {
+                        //     modules: true
+                        // }
                     }
                 ]
             }

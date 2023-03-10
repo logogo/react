@@ -1,30 +1,29 @@
-import React  from 'react';
+import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import finalReducer from './reducer'
-import AsyncComponent from './component/index.js'
-/**
- *异步闲暇时加载
- * **/
-const App = AsyncComponent(() => import(/* webpackChunkName: "App",webpackPrefetch: true*/ './App/index.js'));
-const Home = AsyncComponent(() => import(/* webpackChunkName: "Home",webpackPrefetch: true */ './Home/index.js'));
-const AntdLi = AsyncComponent(() => import(/* webpackChunkName: "Home",webpackPrefetch: true */ './AntdLi/index.js'));
+import reduce from './store';
+import routers from './router'
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(finalReducer, composeEnhancers(
-   applyMiddleware(thunk)
-))
-
+let store = {}
+// build 不可看redux
+if(process.env.CURRENT_ENV.includes("build")){
+    store = createStore(reduce, applyMiddleware(thunk));
+}else{
+    store = createStore(reduce, composeEnhancers(
+        applyMiddleware(thunk)
+    ));
+}
 ReactDOM.render(
-   <Provider store = {store}>
-      <BrowserRouter>
-         <Route path='/' exact={true} component = {App}/>
-         <Route path='/home'  component = {Home}/>
-         <Route path='/antdLi'  component = {AntdLi}/>
-
-      </BrowserRouter>
-   </Provider>,
+    <Provider store = {store}>
+        <BrowserRouter>
+            {routers.map(elt=>{
+                return <Route path={elt.path} exact={elt.exact} component = {elt.component}/>
+            })}
+        </BrowserRouter>    
+    </Provider>,
     document.getElementById('root')
- )
+);

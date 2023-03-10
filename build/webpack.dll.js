@@ -5,7 +5,6 @@ module.exports = {
 	mode: 'production',
 	entry: {
 		react: ['react', 'react-dom'],
-		jquery: ['jquery']
 	},
 	output: {
 		filename: '[name].dll.js',

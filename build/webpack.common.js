@@ -24,9 +24,6 @@ const plugins = [
         template: './src/index.html'
     }),
     new CleanWebpackPlugin(),
-    new webpack.ProvidePlugin({
-        $ : 'jquery'
-    }),
     new Dotenv(json)
 ];
 
@@ -69,6 +66,12 @@ const commConfig = {
                 } 
             }
         ],
+    },
+    resolve: {
+        extensions: ['.js'],
+        alias: {
+            '@': path.resolve(__dirname,'../src'),
+        }
     },
     plugins,
     optimization: {

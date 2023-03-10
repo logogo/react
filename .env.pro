@@ -1,1 +1,4 @@
 DB_HOST=3333333
+
+#环境
+CURRENT_ENV="test-build"

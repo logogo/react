@@ -1,1 +1,0 @@
-console.log('参数'+process.argv[2]);
