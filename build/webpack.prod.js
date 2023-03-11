@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin  // 本地打包上线时候，不要用这个包
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // 本地打包上线时候，不要用这个包
 
 const plugins = [
     new OptimizeCssAssetsPlugin(),
@@ -35,6 +35,24 @@ const prodConfig = {
                         loader: 'css-loader',
                         options: {
                             modules: true
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.less$/i,
+                exclude: /node_modules/, // node_modules下的less文件不使用模块化
+                use: ['style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true
                         }
                     }
                 ]

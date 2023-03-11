@@ -1,5 +1,5 @@
 import React from 'react';
-import oStyle from './index.css';
+import oStyle from './index.less';
 import Menu from './component/menu/index.js';
 
 console.log(oStyle);

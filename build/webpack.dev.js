@@ -32,6 +32,24 @@ const devConfig = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.less$/i,
+                exclude: /node_modules/, // node_modules下的less文件不使用模块化
+                use: ['style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true
+                        }
+                    }
+                ]
             }
         ]
     },
