@@ -14,7 +14,17 @@ const routers = [
         exact: true,
         meta: {
             authority: '1111'
-        }
+        },
+        children: [
+            {
+                index: true,
+                element: <div>2222222</div>
+            },
+            {
+                path: 'article',
+                element: 4444444
+            }
+        ]
     },
     {
         path: '/home',

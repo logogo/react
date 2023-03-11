@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Outlet } from 'react-router-dom';
 import oStyle from './index.less';
 import Menu from './component/menu/index';
 
@@ -9,9 +9,10 @@ const app = () => {
         navigate('/antdLi?aaa=11111');
     }, []);
     return (
-        <div className={oStyle.container}>
+        <div>
             <Menu/>
             <div onClick={changePage}>1111111</div>
+            <Outlet/>
         </div>
     );
 };
