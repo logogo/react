@@ -1,28 +1,36 @@
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 import AsyncComponent from '@/component/asyncComponent';
+
+const App = AsyncComponent(() => import(/* webpackPrefetch: true*/ '@/views/App'));
+const Home = AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/Home'));
+const AntdLi = AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/AntdLi'));
+const NotFound = AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/NotFound'));
 
 const routers = [
     {
         path: '/',
-        component: AsyncComponent(() => import(/* webpackPrefetch: true*/ '@/views/App')),
+        element: <App/>,
         exact: true,
         meta: {
             authority: '1111'
-        },
-        key: 'App'
+        }
+    },
+    {
+        path: '/home',
+        element: <Home/>,
+        meta: {
+            authority: '1111'
+        }
+    },
+    {
+        path: '/antdLi',
+        element: <AntdLi/>
+    },
+    {
+        path: '*',
+        element: <NotFound />
     }
-    // {
-    //     path: '/home',
-    //     component: AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/Home')),
-    //     meta: {
-    //         authority: '1111'
-    //     },
-    //     key: 'Home'
-    // },
-    // {
-    //     path: '/antdLi',
-    //     component: AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/AntdLi')),
-    //     key: 'AntdLi'
-    // }
 ];
 
-export default routers;
+export default createBrowserRouter(routers);
