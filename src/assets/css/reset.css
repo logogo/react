@@ -1,0 +1,129 @@
+html,
+body,
+div,
+span,
+iframe,
+map,
+font,
+img,
+a img,
+samp,
+strong,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+p,
+blockquote,
+a,
+address,
+code,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+table,
+tr,
+td,
+th,
+input {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 12px;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+i,
+em {
+  font-style: normal;
+}
+input {
+  background: none;
+}
+.clearFix:after {
+  content: '.';
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+input,
+textarea {
+  -webkit-user-select: text !important;
+}
+* {
+  -webkit-touch-callout: none; /*系统默认菜单被禁用*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -khtml-user-select: none; /*早期浏览器*/
+  -moz-user-select: none; /*火狐*/
+  -ms-user-select: none; /*IE10*/
+  user-select: none;
+  /* 字体兼容 */
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro SC', 'SF Pro Text', 'Helvetica Neue',
+    Helvetica, 'PingFang SC', 'Segoe UI', Roboto, 'Hiragino Sans GB', 'arial', 'microsoft yahei ui',
+    'Microsoft YaHei', SimSun, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background: #fff;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+.am-toast {
+  z-index: 999999999 !important;
+}
+.am-toast.am-toast-nomask {
+  max-width: 80% !important;
+}
+video::-webkit-media-controls {
+  /*不显示时间条*/
+  display: none !important;
+}
+
+@font-face {
+  font-family: Impact;
+  src: url('../font/Impact.ttf');
+}

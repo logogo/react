@@ -2,9 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-	mode: 'production',
+    mode: 'production',
 	entry: {
-		react: ['react', 'react-dom'],
+		react: ['react', 'react-dom']
 	},
 	output: {
 		filename: '[name].dll.js',
@@ -17,4 +17,4 @@ module.exports = {
 			path: path.resolve(__dirname, '../dll/[name].manifest.json'),
 		})
 	]
-}
+};

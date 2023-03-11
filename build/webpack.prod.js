@@ -6,21 +6,31 @@ const plugins = [
     new OptimizeCssAssetsPlugin(),
     new MiniCssExtractPlugin({
         filename: '[name].css',
-        chunkFilename: '[name].chunk.css',
+        chunkFilename: '[name].chunk.css'
     })
-]
-if( process.env.npm_lifecycle_event === 'build:analyze'){
+];
+if (process.env.npm_lifecycle_event === 'build:analyze') {
     plugins.push(new BundleAnalyzerPlugin());
 }
 
 const prodConfig = {
     mode: 'production',
     devtool: 'none',
-    module:{
-        rules:[
+    module: {
+        rules: [
             {
                 test: /\.css$/,
-                use: [ MiniCssExtractPlugin.loader, 
+                include: /node_modules/,
+                use: [MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: [MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
