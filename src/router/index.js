@@ -1,46 +1,82 @@
-import React from 'react';
+import React, { Suspense, lazy } from "react"
 import { createBrowserRouter } from 'react-router-dom';
-import AsyncComponent from '@/component/asyncComponent';
+import Permission from "./permission";
 
-const App = AsyncComponent(() => import(/* webpackPrefetch: true*/ '@/views/App'));
-const Home = AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/Home'));
-const AntdLi = AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/AntdLi'));
-const NotFound = AsyncComponent(() => import(/* webpackPrefetch: true */ '@/views/NotFound'));
+const Layout = lazy(() => import(/* webpackPrefetch: true */ '@/layout'));
+const App = lazy(() => import(/* webpackPrefetch: true*/ '@/views/App'));
+const Home = lazy(() => import(/* webpackPrefetch: true */ '@/views/Home'));
+const AntdLi = lazy(() => import(/* webpackPrefetch: true */ '@/views/AntdLi'));
+const NotFound = lazy(() => import(/* webpackPrefetch: true */ '@/views/NotFound'));
+const Supplier = lazy(() => import(/* webpackPrefetch: true */ '@/views/supplier'));
+
+//懒加载配置处理
+const lazyLoad = (Component, code) => {
+    return (<Permission code={code}>
+                <Suspense fallback={<div>loading...</div>}>
+                    {Component}
+                </Suspense>
+            </Permission>)
+};
 
 const routers = [
     {
         path: '/',
-        element: <App/>,
-        exact: true,
-        meta: {
-            authority: '1111'
-        },
+        element: lazyLoad(<Layout/>),
         children: [
             {
                 index: true,
-                element: <div>2222222</div>
+                element: <div>2222222</div>,
+                meta: {
+                    authority: '1111'
+                },
             },
             {
                 path: 'article',
-                element: 4444444
+                id: 'article',
+                element: lazyLoad(<App/>, 'article')
+            },
+            {
+                path: 'supplier',
+                id: 'supplier',
+                element: lazyLoad(<Supplier/>, 'supplier')
             }
         ]
     },
     {
         path: '/home',
-        element: <Home/>,
+        id: 'home',
+        element: lazyLoad(<Home/>, 'home'),
         meta: {
             authority: '1111'
         }
     },
     {
         path: '/antdLi',
-        element: <AntdLi/>
+        element: lazyLoad(<AntdLi/>),
     },
     {
         path: '*',
-        element: <NotFound />
+        element: lazyLoad(<NotFound />)
     }
 ];
+
+const checkAuth = (router)=>{
+    // 请求的参数
+    return {
+        
+    };
+}
+
+const addLoader = (routers) => { // 只给最底层加loader方法
+    for(let i = 0; i<routers.length; i++){
+        if(routers[i].children){
+            addLoader(routers[i].children)
+        }else{
+            routers[i].loader = ()=> checkAuth(routers[i]);
+        }
+    }
+};
+
+addLoader(routers)
 
 export default createBrowserRouter(routers);

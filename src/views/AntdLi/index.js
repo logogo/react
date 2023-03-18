@@ -12,7 +12,6 @@ const AntdLi = () => {
     useEffect(() => {
         const id = params.get('aaa');
         console.log(id);
-        console.log(11111);
         dispatch({
             type: 'AntdLi/acts',
             num: 555555

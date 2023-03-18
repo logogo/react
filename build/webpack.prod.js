@@ -66,4 +66,5 @@ const prodConfig = {
     }
 }
 
-module.exports = prodConfig
+module.exports = prodConfig;
+

@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import '@/assets/css/reset.css';
 import 'antd/dist/antd.css';
 import reduce from './store';
-import router from './router';
+import router  from './router';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = {};
@@ -22,7 +22,9 @@ if (process.env.CURRENT_ENV.includes('build')) {
 
 ReactDOM.render(
     <Provider store = {store}>
-        <RouterProvider router={router}></RouterProvider>
+         <React.StrictMode>
+            <RouterProvider router={router} ></RouterProvider>
+         </React.StrictMode>
     </Provider>,
     document.getElementById('root')
 );

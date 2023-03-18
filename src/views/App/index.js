@@ -1,18 +1,39 @@
-import React, { useCallback } from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
+import React, { useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import api from '@/api'
+import Upload from '@/component/upload.js';
 import oStyle from './index.less';
-import Menu from './component/menu/index';
+
 
 const app = () => {
     const navigate = useNavigate();
-    const changePage = useCallback(() => {
-        navigate('/antdLi?aaa=11111');
+    useEffect(()=>{
+        // let data = {
+        //     "userId":"3",
+        //     "userName":"22",
+        //     "menuId":3,
+        //     "menuName":"菜单"
+        // }
+        // api.test.addBuryingPoint(data).then(res=>{
+        //     console.log(res)
+        // })
     }, []);
+    const changePage = useCallback(() => {
+        // navigate('/antdLi?aaa=11111');
+        console.log("跳转页面");
+    }, []);
+    const beforeUpload = ()=>{
+        return false
+    }
+    const successFile = (str)=>{
+        console.log(str);
+    }
     return (
         <div>
-            <Menu/>
-            <div onClick={changePage}>1111111</div>
-            <Outlet/>
+            <div className={oStyle.container} onClick={changePage}>1111111</div>
+            <Upload fileSize={1000} beforeUpload={beforeUpload} showUploadList={false} onSuccess={successFile}>
+                <button>测试上传</button>
+            </Upload>
         </div>
     );
 };

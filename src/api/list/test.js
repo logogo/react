@@ -1,10 +1,19 @@
 import axios from '@/utils/axios';
 
-const queryTrainProjectDetail = () => {
-    return axios({
-        url: '/room/get-live-room?uid=38'
-    });
-};
+const test = {
+    login: () =>{
+        return axios({
+            url: '/login/login',
+            method: 'get'
+        });
+    },
+    addBuryingPoint: (data) => {
+        return axios({
+            url: '/buryingPoint/add',
+            method: 'post',
+            data
+        });
+    }
+}
 
-export default { queryTrainProjectDetail }
-
+export default { test }
