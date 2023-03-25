@@ -28,7 +28,9 @@ const devConfig = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true
+                            modules: {
+                                localIdentName: '[path][name]-[local]-[hash:5]'
+                            }
                         }
                     }
                 ]
@@ -40,7 +42,9 @@ const devConfig = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true
+                            modules: {
+                                localIdentName: '[path][name]-[local]-[hash:5]'
+                            }
                         }
                     },
                     {
