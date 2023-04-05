@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom';
 import { Row, Col } from 'antd';
 import ShowNum from './compoent/showNum';
 
@@ -9,9 +9,10 @@ const AntdLi = () => {
     const dispatch = useDispatch();
     const [params] = useSearchParams();
     const counter = useSelector(state => state.AntdLiData);
+    const id = params.get('aaa');
+    console.log(id);
+    console.log(4444444444);
     useEffect(() => {
-        const id = params.get('aaa');
-        console.log(id);
         dispatch({
             type: 'AntdLi/acts',
             num: 555555

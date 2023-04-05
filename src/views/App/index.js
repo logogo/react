@@ -19,8 +19,7 @@ const app = () => {
         // })
     }, []);
     const changePage = useCallback(() => {
-        // navigate('/antdLi?aaa=11111');
-        console.log("跳转页面");
+        navigate('/antdLi?aaa=11111');
     }, []);
     const beforeUpload = ()=>{
         return false
