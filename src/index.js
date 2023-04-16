@@ -8,6 +8,8 @@ import '@/assets/css/reset.css';
 import 'antd/dist/antd.css';
 import reduce from './store';
 import router  from './router';
+import zhCN from 'antd/es/locale/zh_CN'; 
+import { ConfigProvider } from 'antd'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = {};
@@ -21,10 +23,12 @@ if (process.env.CURRENT_ENV.includes('build')) {
 }
 
 ReactDOM.render(
-    <Provider store = {store}>
+    <ConfigProvider locale={zhCN}>
+        <Provider store = {store}>
          <React.StrictMode>
             <RouterProvider router={router} ></RouterProvider>
          </React.StrictMode>
-    </Provider>,
+    </Provider>
+    </ConfigProvider>,
     document.getElementById('root')
 );

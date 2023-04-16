@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Row, Col, Button,Form, Input, Select, Divider, Table, Space, Switch } from 'antd';
+import {Row, Col, Button,Form, Input, Select, Divider, Table, Space, Switch, Pagination,DatePicker } from 'antd';
 import TableOrder from './Component/tableOrder'
 import oStyle from './index.less'
 
@@ -123,6 +123,10 @@ const Supplier = () => {
         item.action = val;
         setTableData((arr)=> arr.slice(0))
     };
+    const changePage = (page, pageSize) => {
+        console.log(page);
+        console.log(pageSize);
+    }
     return (
         <>
             <Form
@@ -193,6 +197,7 @@ const Supplier = () => {
                     </div>
                 </Col>
              </Row>
+             <DatePicker/>
             </Form>
             <Divider dashed />
             <div className={oStyle.contents}>
@@ -216,6 +221,7 @@ const Supplier = () => {
                         }}
                     />
                 </div>
+                <Pagination current={2} total={5000} size={10} onChange={changePage} />;
             </div>
         </>
     )
