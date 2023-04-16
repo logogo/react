@@ -93,7 +93,7 @@ const commConfig = {
 };
 
 module.exports = ()=>{
-    if (process.env.NODE_ENV && process.env.NODE_ENV === 'pro') {
+    if (process.env.npm_lifecycle_event && process.env.npm_lifecycle_event === 'build') {
         return merge(commConfig, prodConfig);
     }
     return merge(commConfig, devConfig);
