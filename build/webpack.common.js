@@ -88,6 +88,7 @@ const commConfig = {
         }
     },
     output: {
+        publicPath: '/',
         path: path.resolve(__dirname, '../dist')
     }
 };
