@@ -95,13 +95,11 @@
   "lint-staged": {
     "src/**/*.{js,jsx,tsx,ts}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "src/**/*.{css,less}": [
       "prettier --write",
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ]
   }
 }
