@@ -100,6 +100,7 @@
     "src/**/,*.{css,less}": [
       "stylelint --fix",
       "git add"
-    ]
+    ],
+    "*.{js,css,less,json}": "prettier --write"
   }
 }
