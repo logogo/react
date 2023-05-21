@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build:dll": "webpack --config ./build/webpack.dll.js",
+    "start": "concurrently \"npm run dev\" \"npm run mock\"",
     "dev": "set NODE_ENV=dev&&webpack-dev-server --config ./build/webpack.common.js",
+    "mock": "nodemon --watch nodeData/apis/ nodeData/http.js",
     "build": "set NODE_ENV=pro&&webpack --config ./build/webpack.common.js",
     "build:analyze": "set NODE_ENV=pro&&webpack --config ./build/webpack.common.js",
     "serve": "serve ./dist/",
@@ -85,7 +87,10 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "core-js": "^3.6.5"
+    "concurrently": "^8.0.1",
+    "core-js": "^3.6.5",
+    "mockjs": "^1.1.0",
+    "nodemon": "2.0.7"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,tsx,ts}": [

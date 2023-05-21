@@ -25,34 +25,37 @@ const routers = [
         children: [
             {
                 index: true,
-                element: <div>2222222</div>,
                 meta: {
                     authority: '1111'
                 },
+                element: <div>2222222</div>
             },
             {
                 path: 'article',
                 id: 'article',
+                meta: {
+                    title: '测试'
+                },
                 element: lazyLoad(<App/>, 'article')
             },
             {
                 path: 'supplier',
                 id: 'supplier',
                 element: lazyLoad(<Supplier/>, 'supplier')
-            }
+            },
+            {
+                path: 'home',
+                id: 'home',
+                element: lazyLoad(<Home/>, 'home'),
+                meta: {
+                    authority: '1111'
+                }
+            },
+            {
+                path: 'antdLi',
+                element: lazyLoad(<AntdLi/>, 'antdLi'),
+            },
         ]
-    },
-    {
-        path: '/home',
-        id: 'home',
-        element: lazyLoad(<Home/>, 'home'),
-        meta: {
-            authority: '1111'
-        }
-    },
-    {
-        path: '/antdLi',
-        element: lazyLoad(<AntdLi/>),
     },
     {
         path: '*',
@@ -63,7 +66,7 @@ const routers = [
 const checkAuth = (router)=>{
     // 请求的参数
     return {
-        
+        router
     };
 }
 
@@ -77,6 +80,6 @@ const addLoader = (routers) => { // 只给最底层加loader方法
     }
 };
 
-addLoader(routers)
+addLoader(routers);
 
 export default createBrowserRouter(routers);
