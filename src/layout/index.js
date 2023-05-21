@@ -3,10 +3,10 @@ import Menu from './component/menu';
 
 const Layout = ()=>{
     return (
-       <>
-         <Menu/>
-       </>
-    )
+        <>
+            <Menu/>
+        </>
+    );
 };
 
 export default Layout;
