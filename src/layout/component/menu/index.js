@@ -31,6 +31,7 @@ const items = [
 ];
 const App = () => {
     console.log(11111111);
+    console.log(22222222);
     const [collapsed, setCollapsed] = useState(false);
     return (
         <Layout
@@ -38,12 +39,15 @@ const App = () => {
                 minHeight: '100vh'
             }}
         >
-            <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+            <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
                 <div className='logo'>
-                    <img src={Tree} style={{
-                        height: '59px',
-                        marginLeft: '15px'
-                    }}/>
+                    <img
+                        src={Tree}
+                        style={{
+                            height: '59px',
+                            marginLeft: '15px'
+                        }}
+                    />
                 </div>
                 <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline' items={items} />
             </Sider>
@@ -84,7 +88,7 @@ const App = () => {
                         textAlign: 'center'
                     }}
                 >
-          Ant Design ©2018 Created by Ant UED
+                    Ant Design ©2018 Created by Ant UED
                 </Footer>
             </Layout>
         </Layout>
