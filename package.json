@@ -15,7 +15,7 @@
     "eslint-fix": "yarn run lint && yarn run lint-style",
     "lint": "eslint --fix --ext .js,.jsx src",
     "lint-style": "stylelint --fix src/**/*.{css,less}",
-    "prepare": "husky install && husky add .husky/pre-commit \"yarn run make\""
+    "prepare": "husky install && husky add .husky/pre-commit \"npx lint-staged\""
   },
   "sideEffects": [
     "*.css"
@@ -100,7 +100,6 @@
     "src/**/,*.{css,less}": [
       "stylelint --fix",
       "git add"
-    ],
-    "*.{js,css,less,json}": "prettier --write"
+    ]
   }
 }
