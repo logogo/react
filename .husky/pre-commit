@@ -2,7 +2,3 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn run make
-yarn run make
-yarn run make
-yarn run make
-yarn run make
