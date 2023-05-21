@@ -94,12 +94,12 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,tsx,ts}": [
-      "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "src/**/*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write"
+      "prettier --write",
+      "stylelint --fix"
     ]
   }
 }
