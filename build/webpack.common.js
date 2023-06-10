@@ -94,7 +94,7 @@ const commConfig = {
 };
 
 module.exports = ()=>{
-    if (process.env.npm_lifecycle_event && process.env.npm_lifecycle_event === 'build') {
+    if (process.env.npm_lifecycle_event && process.env.npm_lifecycle_event.includes('build')) {
         return merge(commConfig, prodConfig);
     }
     return merge(commConfig, devConfig);
