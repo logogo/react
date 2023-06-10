@@ -33,8 +33,10 @@ const prodConfig = {
                 use: [MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
-                        modules: {
-                            localIdentName: '[path][name]-[local]-[hash:5]'
+                        options: {
+                            modules: {
+                                localIdentName: '[path][name]-[local]-[hash:5]'
+                            }
                         }
                     }
                 ]
@@ -45,8 +47,10 @@ const prodConfig = {
                 use: ['style-loader',
                     {
                         loader: 'css-loader',
-                        modules: {
-                            localIdentName: '[path][name]-[local]-[hash:5]'
+                        options: {
+                            modules: {
+                                localIdentName: '[path][name]-[local]-[hash:5]'
+                            }
                         }
                     },
                     {
