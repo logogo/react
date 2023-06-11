@@ -10,7 +10,8 @@
 				useBuiltIns: 'usage' /**引入用到pollyfill**/
 			}
 		],
-		"@babel/preset-react"
+		"@babel/preset-react",
+		"@babel/preset-typescript"
 	],
 	plugins:["@babel/plugin-syntax-dynamic-import"]
 }
