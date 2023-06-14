@@ -19,14 +19,16 @@ const lazyLoad = (Component, code) => {
     );
 };
 
+const content = (
+    <Suspense fallback={<Skeleton active />}>
+        <Layout />
+    </Suspense>
+);
+
 const routers = [
     {
         path: '/',
-        element: (
-            <Suspense fallback={<Skeleton active />}>
-                <Layout />
-            </Suspense>
-        ),
+        element: content,
         children: [
             {
                 index: true,
@@ -60,11 +62,7 @@ const routers = [
     },
     {
         path: '/antdLi',
-        element: (
-            <Suspense fallback={<Skeleton active />}>
-                <Layout />
-            </Suspense>
-        ),
+        element: content,
         children: [
             {
                 index: true,
