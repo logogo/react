@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import { Skeleton } from 'antd';
 import Permission from './permission';
 
-const Layout = lazy(() => import(/* webpackPrefetch: true */ '@/layout'));
+const Layout = lazy(() => import('@/layout'));
 const App = lazy(() => import(/* webpackPrefetch: true*/ '@/views/App'));
 const Home = lazy(() => import(/* webpackPrefetch: true */ '@/views/Home'));
 const AntdLi = lazy(() => import(/* webpackPrefetch: true */ '@/views/AntdLi'));
@@ -18,10 +19,16 @@ const lazyLoad = (Component, code) => {
     );
 };
 
+const content = (
+    <Suspense fallback={<Skeleton active />}>
+        <Layout />
+    </Suspense>
+);
+
 const routers = [
     {
         path: '/',
-        element: lazyLoad(<Layout />),
+        element: content,
         children: [
             {
                 index: true,
@@ -50,9 +57,18 @@ const routers = [
                 meta: {
                     authority: '1111'
                 }
-            },
+            }
+        ]
+    },
+    {
+        path: '/antdLi',
+        element: content,
+        children: [
             {
-                path: 'antdLi',
+                index: true,
+                meta: {
+                    authority: '1111'
+                },
                 element: lazyLoad(<AntdLi />, 'antdLi')
             }
         ]

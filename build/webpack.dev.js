@@ -32,7 +32,15 @@ const devConfig = {
                                 localIdentName: '[path][name]-[local]-[hash:5]'
                             }
                         }
-                    }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: ['autoprefixer']
+                            }
+                        }
+                    },
                 ]
             },
             {
@@ -45,6 +53,14 @@ const devConfig = {
                             modules: {
                                 localIdentName: '[path][name]-[local]-[hash:5]'
                             }
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                          postcssOptions: {
+                            plugins: ['autoprefixer']
+                          }
                         }
                     },
                     {

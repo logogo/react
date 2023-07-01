@@ -38,6 +38,14 @@ const prodConfig = {
                                 localIdentName: '[path][name]-[local]-[hash:5]'
                             }
                         }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: ['autoprefixer']
+                            }
+                        }
                     }
                 ]
             },
@@ -50,6 +58,14 @@ const prodConfig = {
                         options: {
                             modules: {
                                 localIdentName: '[path][name]-[local]-[hash:5]'
+                            }
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: ['autoprefixer']
                             }
                         }
                     },
