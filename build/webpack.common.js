@@ -42,14 +42,30 @@ files.forEach(file => {
 });
 
 const commConfig = {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(ts|tsx)$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                          presets: ['@babel/preset-env'],
+                        },
+                      },
+                      {
+                        loader: 'ts-loader',
+                        options: {
+                          compilerOptions: {
+                            noEmit: false,
+                          },
+                        },
+                      },
+                ],
                 exclude: /node_modules/,
-                loader: 'babel-loader'
-            }, {
+            }, 
+            {
                 test: /\.(jpg|png|gif)$/,
                 use: {
                     loader: 'url-loader',
@@ -68,7 +84,7 @@ const commConfig = {
         ]
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js','.ts', '.tsx'],
         alias: {
             '@': path.resolve(__dirname, '../src')
         }
