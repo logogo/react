@@ -100,3 +100,5 @@ const addLoader = routers => {
 addLoader(routers);
 
 export default createBrowserRouter(routers);
+
+// router6去掉Redirect   改用<Route path="*" element={<Navigate to="/about" />} />
