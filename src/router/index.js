@@ -38,7 +38,7 @@ const routers = [
                 element: <div>2222222</div>
             },
             {
-                path: 'article',
+                path: '/article',
                 id: 'article',
                 meta: {
                     title: '测试'
