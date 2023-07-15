@@ -3,6 +3,7 @@ import React from 'react';
 
 const Permission = props => {
     // 这个root是我们在前面路由中定义了 id: 'root'
+    console.log('permission');
     const { children } = props;
     // const loaderData = useRouteLoaderData(code);
     // if (!code || loaderData?.permissionRoutes?.includes(code)) {

@@ -30,8 +30,6 @@ const items = [
     getItem('Files', '9', <FileOutlined />)
 ];
 const App = () => {
-    console.log(11111111);
-    console.log(22222222);
     const [collapsed, setCollapsed] = useState(false);
     return (
         <Layout
