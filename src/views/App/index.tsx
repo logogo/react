@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ChildCom from './childCom';
+import ChildCom from './components/childCom';
 interface ceType {
     name: string;
     age: number;

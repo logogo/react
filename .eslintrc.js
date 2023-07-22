@@ -15,7 +15,8 @@ module.exports = {
             "jsx": true
         },
         "ecmaVersion": 2020,
-        "sourceType": "module"
+        "sourceType": "module",
+        "parser": "@typescript-eslint/parser"
     },
     "plugins": [
         "react"
