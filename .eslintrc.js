@@ -1,6 +1,6 @@
 module.exports = {
     "root": true,
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "env": {
         "browser": true,
         "node": true,
@@ -16,7 +16,7 @@ module.exports = {
         },
         "ecmaVersion": 2020,
         "sourceType": "module",
-        "parser": "@typescript-eslint/parser"
+        "parser": "babel-eslint"
     },
     "plugins": [
         "react"

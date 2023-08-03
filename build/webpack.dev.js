@@ -1,13 +1,16 @@
 const webpack = require('webpack');
+const path = require('path');
 
 const devConfig = {
     mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'eval-cheap-module-source-map',
     devServer: {
-        contentBase: './',
+        static: {
+            directory: './'
+        },
         open: true,
+        hot: 'only',
         port: 8080,
-        hot: true,
         historyApiFallback: true
     },
     module: {

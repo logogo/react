@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'production',
 	entry: {
-		react: ['react', 'react-dom', 'redux','redux-thunk','react-redux', 'react-router-dom']
+		react: ['react', 'react-dom','react-redux', 'react-router-dom']
 	},
 	output: {
 		filename: '[name].dll.js',

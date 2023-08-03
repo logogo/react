@@ -15,7 +15,7 @@ if (process.env.npm_lifecycle_event === 'build:analyze') {
 
 const prodConfig = {
     mode: 'production',
-    devtool: 'none',
+    devtool: 'hidden-source-map',
     module: {
         rules: [
             {
