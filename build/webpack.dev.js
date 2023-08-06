@@ -58,9 +58,9 @@ const devConfig = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                          postcssOptions: {
-                            plugins: ['autoprefixer']
-                          }
+                            postcssOptions: {
+                                plugins: ['autoprefixer']
+                            }
                         }
                     },
                     {
